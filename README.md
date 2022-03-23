@@ -9,3 +9,5 @@ Repositório de testes automatizados com Jasmine Framework, Curso técnico Senai
 ![image](https://user-images.githubusercontent.com/98499523/158916652-8a3cfc99-063a-4734-b7f4-1c5c5d16e79c.png)
 ##imagens helli-spec.js
 ![image](https://user-images.githubusercontent.com/98499523/158916736-b5bf98c2-2b37-42d4-a51e-a7f5c811e9d6.png)
+
+Modifiquei o readme para mostrar para o Anderson!
