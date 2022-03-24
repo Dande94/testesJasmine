@@ -33,3 +33,15 @@ describe("Suíte de teste do toEqual", function(){
         expect(obj1).toEqual(obj2);
     })
 })
+
+//toMatch
+describe("Suíte de testes do toMatch", function(){
+    var textoComparar = "Curso de testes com Jasmine";
+    it("Deve validar o uso do matcher 'toMatch'", function(){
+        expect(textoComparar).toMatch(/Jasmine/);
+        expect(textoComparar).toMatch("Jasmine");
+        expect(textoComparar).toMatch(/jasmine/i);
+        expect(textoComparar).not.toMatch(/Javascript/);
+            expect("14/12/2016").toMatch(/^\d{2}\/\d{2}\/\d{4}$/);
+    })
+})
