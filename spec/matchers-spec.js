@@ -43,5 +43,18 @@ describe("Suíte de testes do toMatch", function(){
         expect(textoComparar).toMatch(/jasmine/i);
         expect(textoComparar).not.toMatch(/Javascript/);
             expect("14/12/2016").toMatch(/^\d{2}\/\d{2}\/\d{4}$/);
-    })
-})
+    });
+});
+
+//toBeDefined
+describe("Suíte de teste do toBeDefined", function(){
+    var numero = 10;
+    var texto;
+    var obj = {'valor':10};
+    it("Deve validar o uso do matcher 'toBeDefined'",function(){
+        expect(numero).toBeDefined();
+        expect(texto).not.toBeDefined();
+        expect(obj.valor).toBeDefined();
+        expect(obj.mensagem).not.toBeDefined();
+    });
+});
