@@ -71,3 +71,17 @@ describe("Suíte de testes do toBeUndefined", function(){
         expect(obj.valor).not.toBeUndefined();
     });
 });
+
+//toBeNull
+describe("Suít de testes do toBeNull", function(){
+    var objeto = null;
+    var texto;
+    var numero = 10;
+
+    it("Deve validar o uso de matcher 'toBeNull'", function(){
+        expect(objeto).toBeNull();
+        expect(numero).not.toBeNull();
+        expect(texto).not.toBeNull();
+        expect(objeto).not.toEqual(texto);
+    });
+});
