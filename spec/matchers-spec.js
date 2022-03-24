@@ -58,3 +58,16 @@ describe("Suíte de teste do toBeDefined", function(){
         expect(obj.mensagem).not.toBeDefined();
     });
 });
+
+//toBeUndefined
+describe("Suíte de testes do toBeUndefined", function(){
+    var numero = 10;
+    var texto;
+    var obj = {'valor':10};
+    it("Deve validar o uso do macther 'toBeUndefines'", function(){
+        expect(texto).toBeUndefined();
+        expect(numero).not.toBeUndefined();
+        expect(obj.mensagem).toBeUndefined();
+        expect(obj.valor).not.toBeUndefined();
+    });
+});
