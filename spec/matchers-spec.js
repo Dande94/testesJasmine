@@ -96,5 +96,20 @@ describe("Suíte de testes do toBeTruthy", function(){
         expect(objeto).toBeTruthy();
         expect(numero).toBeTruthy();
         expect(texto).not.toBeTruthy();
-    })
-})
+    });
+});
+
+//toBeFalsy
+describe("Suíte de testes do toBeFalsy", function(){
+    var numero = 10;
+
+    it("Deve validar o uso do matcher 'toBeFalsy'", function(){
+        expect(false).toBeFalsy();
+        expect("").toBeFalsy();
+        expect(0).toBeFalsy();
+        expect(undefined).toBeFalsy();
+        expect(null).toBeFalsy();
+        expect(NaN).toBeFalsy();
+        expect("false").not.toBeFalsy();
+    });
+});
