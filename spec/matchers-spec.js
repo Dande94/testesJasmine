@@ -126,3 +126,62 @@ describe("Suíte de testes do toContain", function(){
         expect(nomes).not.toContain("ciclano");
     });
 });
+
+//toBeLessThan
+
+describe("Suíte de testes do toBeLessThan", function(){
+    const PI = 3.1415;
+    var numero = 2;
+    it("Deve validar o uso do matcher 'toBeLessThan'", function(){
+        expect(numero).toBeLessThan(PI);
+        expect("1.2").toBeLessThan(PI);
+        expect(5).not.toBeLessThan(PI);
+        expect(PI).not.toBeLessThan(PI);
+    });
+});
+
+// toBeGreaterThan
+
+describe("Suíte de testes do toBeGreaterThan", function(){
+    const PI = 3.1415;
+    var numero = 4;
+    it("Deve validar o uso do matcher 'toBeGreaterThan'", function(){
+        expect(numero).toBeGreaterThan(PI);
+        expect("3.2").toBeGreaterThan(PI);
+        expect(2).not.toBeGreaterThan(PI);
+        expect(PI).not.toBeGreaterThan(PI);
+    });
+});
+
+//toThrow
+describe("Suíte de testes do toThrow", function(){
+    var comErro = function(){
+        return numero * 10;
+    };
+
+    var semErro = function(numero){
+        return numero * 10;
+    };
+    var numero = 4;
+    it("Deve validar o uso do matcher 'toThrow'", function(){
+        expect(comErro).toThrow();  
+        expect(semErro).not.toThrow();  
+    });
+});
+
+//toThrowError
+describe("Suíte de testes do toThrowError", function(){
+    var comErro = function(){
+        return numero * 10;
+    }
+
+    var semErro = function(numero){
+        return numero * 10;
+    }
+    var numero = 4;
+    it("Deve validar o uso do matcher 'toThrowError'", function(){
+        expect(comErro).toThrowError();  
+        expect(semErro).not.toThrowError();  
+    });
+});
+
