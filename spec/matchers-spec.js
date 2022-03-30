@@ -114,4 +114,15 @@ describe("Suíte de testes do toBeFalsy", function(){
     });
 });
 
-//buygyu
+// toContain
+describe("Suíte de testes do toContain", function(){
+    var nomes = ["Fulano", "Ciclano", "Beltrano"];
+    var nomesTexto = "Fulano Ciclano Beltrano";
+    it("Deve validar o uso de matcher 'toContain'", function(){
+        expect(nomes).toContain("Ciclano");
+        expect(nomesTexto).toContain("Fulano");
+        expect(nomesTexto).toContain("Bel");
+        expect(nomes).not.toContain("Maria");
+        expect(nomes).not.toContain("ciclano");
+    });
+});
