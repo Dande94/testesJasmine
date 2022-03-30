@@ -162,7 +162,6 @@ describe("Suíte de testes do toThrow", function(){
     var semErro = function(numero){
         return numero * 10;
     };
-    var numero = 4;
     it("Deve validar o uso do matcher 'toThrow'", function(){
         expect(comErro).toThrow();  
         expect(semErro).not.toThrow();  
@@ -171,17 +170,19 @@ describe("Suíte de testes do toThrow", function(){
 
 //toThrowError
 describe("Suíte de testes do toThrowError", function(){
-    var comErro = function(){
-        return numero * 10;
-    }
-
-    var semErro = function(numero){
-        return numero * 10;
-    }
-    var numero = 4;
+    calculadoraDobro = function(numero){
+        if(numero <=0){
+            throw new TypeError("O número deve ser maior que 0")
+        }
+        return numero * numero;
+    };
     it("Deve validar o uso do matcher 'toThrowError'", function(){
-        expect(comErro).toThrowError();  
-        expect(semErro).not.toThrowError();  
+        expect(function() { calculadoraDobro(0)}).toThrowError();    
+        expect(function() { calculadoraDobro(0)}).toThrowError("O número deve ser maior que 0");    
+        expect(function() { calculadoraDobro(0)}).toThrowError(/maior que 0/);    
+        expect(function() { calculadoraDobro(0)}).toThrowError(TypeError);    
+        expect(function() { calculadoraDobro(0)}).toThrowError(TypeError, "O número deve ser maior que 0");    
+        expect(calculadoraDobro).not.toThrowError();        
     });
 });
 
