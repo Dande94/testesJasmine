@@ -249,6 +249,7 @@ describe("Suíte de testes do beforeAll", function(){
       expect(contador).toEqual(12);
     });
 });
+
 //afterAll
 describe("Suíte de testes do afterAll", function(){
     var contador;
@@ -263,5 +264,25 @@ describe("Suíte de testes do afterAll", function(){
     });
     it("Deve exibir o contador com valor 10", function(){
       expect(contador).toEqual(10);
+    });
+});
+
+//aninhando suítes
+describe("Suíte de testes do 'aninhando suítes'", function(){
+    var contadorExterno = 0;
+    beforeEach(function(){
+        contadorExterno++;
+    });
+    it("Deve ter incrementado o contador externo para 1", function(){
+        expect(contadorExterno).toEqual(1);
+    });
+    describe("Suíte aninhada à anterior", function(){
+        var contadorInterno = 1;
+        beforeEach(function(){
+            contadorInterno++;
+        });
+        it("Deve conter o valor '2' para ambos contadores", function(){
+            expect(contadorInterno).toEqual(contadorExterno);
+        });
     });
 });
