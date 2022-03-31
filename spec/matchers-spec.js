@@ -232,3 +232,36 @@ describe("Suíte de testes do afterEach", function(){
       expect(contador).toEqual(1);
     });
 });
+
+//beforeAll
+describe("Suíte de testes do beforeAll", function(){
+    var contador;
+    beforeAll(function(){
+        contador = 11;            
+    });
+    afterEach(function(){
+        contador++;
+    });
+    it("Deve exibir o contador com valor 11", function(){
+      expect(contador).toEqual(11);
+    });
+    it("Deve exibir o contador com valor 12", function(){
+      expect(contador).toEqual(12);
+    });
+});
+//afterAll
+describe("Suíte de testes do afterAll", function(){
+    var contador;
+    beforeAll(function(){
+        contador = 10;            
+    });
+    afterAll(function(){
+        contador = 0;
+    });
+    it("Deve exibir o contador com valor 10", function(){
+      expect(contador).toEqual(10);
+    });
+    it("Deve exibir o contador com valor 10", function(){
+      expect(contador).toEqual(10);
+    });
+});
