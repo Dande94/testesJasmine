@@ -186,3 +186,49 @@ describe("Suíte de testes do toThrowError", function(){
     });
 });
 
+//Falha Manual
+describe("Suíte de testes do  fail'Falha Manual'", function(){
+
+    var operacao = function(deveExecutar, callback){
+        if(deveExecutar){
+            callback();
+        }
+    };
+
+    it("Não deve executar a função de callback", function(){
+       operacao(false, function(){
+           fail("Função de callback foi executada");
+       });
+    });
+});
+
+//beforeEach
+describe("Suíte de testes do beforeEach", function(){
+    var contador = 0;
+    beforeEach(function(){
+        contador++;
+    });
+    it("Deve exibir o contador com valor 1", function(){
+      expect(contador).toEqual(1);
+    });
+    it("Deve exibir o contador com valor 2", function(){
+      expect(contador).toEqual(2);
+    });
+});
+
+//afterEach
+describe("Suíte de testes do afterEach", function(){
+    var contador = 0;
+    beforeEach(function(){
+        contador++;
+    });
+    afterEach(function(){
+        contador = 0;
+    });
+    it("Deve exibir o contador com valor 1", function(){
+      expect(contador).toEqual(1);
+    });
+    it("Deve continuar exibindo o contador com valor 1", function(){
+      expect(contador).toEqual(1);
+    });
+});
